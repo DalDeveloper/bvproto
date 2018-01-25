@@ -1,0 +1,5 @@
+Buyer:
+-----------------------
+1. Get all proposals  where buyer/cid = <current_buyer_id>
+
+ 

@@ -1,0 +1,138 @@
+{
+    "users" : {
+        "u1": {
+            "meta":{
+                "uid" : "Database Id",
+                "name" : "",
+                "email": "",
+                "phone": "",
+                "role": "",
+                "profileImgUrl": "",
+                "profileImgThumbUrl": "",
+                "company":{
+                    "cid": "Database Id",
+                    "cname" : ""
+                }
+            },
+            "online": true,
+            "lastOnline": "",
+            "proposals": {
+                "p1": true,
+                "p2": true,
+                "p4": true
+            },
+            "createdOn": "timestamp",
+            "updatedOn": "timestamp"
+        }
+    },
+    "proposals":{
+        "p1" : {
+            "buyerId": "",
+            "sellerId": "",
+            "proposalId": "",
+            "privateProposalId": "",
+            "buyerFilter": "<proposalId>-<buyerId>",
+            "createdOn": "timestamp",
+            "updatedOn": "timestamp",
+            "lastMessage": "timestamp",
+            "details": {
+                "title": "",
+                "sellerMeta":{
+                  "cid": "Database Id",  
+                  "cname": "",
+                  "otherDetails" : {}
+                },
+                "buyerMeta":{
+                  "cid": "Database Id",
+                  "cname": "",
+                  "otherDetails" : {}
+                }
+            },
+            "messages": {
+                "m1": {
+                   "postedOn": "timestamp",
+                   "payload": "Actual message",
+                   "user": {
+                       "uid": "Database Id",
+                       "name": "",
+                       "profileImgUrl": ""
+                   },
+                   "type": "text/attachment",
+                   "attachments": {
+                      "a1": {
+                          "meta":{}
+                      },
+                      "a2": {
+                          "meta":{}
+                      },
+                      "a3": {
+                          "meta":{}
+                      }   
+                   }  
+                },
+                "m2": {
+                   "postedOn": "timestamp",
+                   "payload": "Actual message",
+                   "user": {
+                       "uid": "Database Id",
+                       "fuid": "u1 - Firebase user object id",
+                       "name": "",
+                       "profileImgUrl": ""
+                   },
+                   "type": "text/attachment",
+                   "attachments": {
+                      "a1": {
+                          "meta":{}
+                      },
+                      "a2": {
+                          "meta":{}
+                      },
+                      "a3": {
+                          "meta":{}
+                      }   
+                   }  
+                },
+                "m3": {
+                   "postedOn": "timestamp",
+                   "payload": "Actual message",
+                   "user": {
+                       "uid": "Database Id",
+                       "fuid": "u1 - Firebase user object id",
+                       "name": "",
+                       "profileImgUrl": ""
+                   },
+                   "type": "text/attachment",
+                   "attachments": {
+                      "a1": {
+                          "meta":{}
+                      },
+                      "a2": {
+                          "meta":{}
+                      },
+                      "a3": {
+                          "meta":{}
+                      }   
+                   }  
+                }
+            },
+            "users":{
+               "u1": {
+                    "uid": "Database Id",
+                    "name": "",
+                    "profileImgUrl": "",
+                    "buyerInitiator": true,
+                    "sellerInitiator": false,
+                    "cid": ""
+                },
+                "u2": {
+                    "uid": "Database Id",
+                    "name": "",
+                    "profileImgUrl": "",
+                    "buyerInitiator": false,
+                    "sellerInitiator": true,
+                    "cid": ""
+                }
+            }
+        }
+    }
+}
