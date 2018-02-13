@@ -10,13 +10,18 @@ app.controller("ChatCtrl", function($scope, $firebaseArray) {
             console.log($scope.data);
         }) 
     */
-    
+    $scope.showPreviewZone = false;
     $scope.messageList = document.getElementById('messages');
     $scope.messageInput = document.getElementById('message');
     $scope.storage = firebase.storage();
     // A loading image URL.
     $scope.LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';    
-    
+    // Template for thumb
+    $scope.ATTACHMENT_THUMB = `
+        <div class="media-thumb stagger-delay active" style="opacity: 1; display: block; transform: scaleX(1) scaleY(1); transform-origin: 50% 50% 0px; position:relative;">
+            <a data-dz-remove class="btn-floating btn waves-effect waves-light red thm-btn-close" style="position: absolute;width: 20px;height: 20px;line-height: 20px;left:7px; top:1px;"><i class="tiny material-icons" style="font-size: 1rem;line-height:7px;">close</i></a>
+            <div class="media-thumb-body"><img data-dz-thumbnail/></div>
+        </div>`
     // Template for messages.
     $scope.MESSAGE_TEMPLATE =
         '<div class="message-container">' +
@@ -85,6 +90,26 @@ app.controller("ChatCtrl", function($scope, $firebaseArray) {
         imgElement.src = imageUri;
     }
     };
+
+    $scope.showDropZone = function(){
+        console.log(123)
+        // $scope.myDropzone = new Dropzone("div#messages-card", { url: "/file/post"});
+        alert("Hello");
+    }
+
+    $scope.dropzone = new Dropzone(document.body, { // Make the whole body a dropzone
+        url: "/", // Set the url
+        previewsContainer: "#templateContainer", // Define the container to display the previews
+        clickable: "#image-form", // Define the element that should be used as click trigger to select files.
+        previewTemplate: $scope.ATTACHMENT_THUMB
+      });
+    
+      $scope.dropzone.on("addedfile", function(file) {
+        /* Maybe display some more file information on your page */
+        $scope.$apply(function(){
+            $scope.showPreviewZone = true;
+        })
+      });
     /* $scope.$watch('proposals',function() {
         console.log($scope.proposals);
         $scope.proposals.forEach(proposal =>{
